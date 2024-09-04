@@ -1,6 +1,6 @@
 {
-  "name": "rpi-ws281x-native",
-  "version": "1.0.4",
+  "name": "@ircam/rpi-ws281x-native",
+  "version": "1.0.5",
   "description": "(raspberry-pi *only*) native bindings to control a strip of WS281x-LEDs with node.js",
   "keywords": [
     "raspberry",
@@ -17,11 +17,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/beyondscreen/node-rpi-ws281x-native.git"
+    "url": "git://github.com/ircam-ismm/node-rpi-ws281x-native.git"
   },
-  "author": "Martin Schuhfuss <m.schuhfuss@gmail.com>",
-  "homepage": "https://github.com/beyondscreen/node-rpi-ws281x-native",
-  "bugs": "https://github.com/beyondscreen/node-rpi-ws281x-native/issues",
+  "author": "Martin Schuhfuss",
+  "homepage": "https://github.com/ircam-ismm/node-rpi-ws281x-native",
+  "bugs": "https://github.com/ircam-ismm/node-rpi-ws281x-native/issues",
   "license": "MIT",
   "scripts": {
     "install": "node-gyp rebuild -j4 --release",

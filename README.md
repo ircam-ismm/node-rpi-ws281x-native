@@ -1,5 +1,9 @@
 # control ws281x-LEDs with node.js
 
+This is a fork of [beyondscreen](https://github.com/beyondscreen/node-rpi-ws281x-native.git) to update the native library, in order to support more hardware versions.
+
+See issues like [#130](https://github.com/beyondscreen/node-rpi-ws281x-native/issues/130).
+
 **NOTE: This will only ever work on the Raspberry Pi.**
 
 This module provides native bindings to the
@@ -12,12 +16,12 @@ from a raspberry-pi. Supported are all LEDs of the NEOPIXEL/WS281x-family
 
 this module is available via npm:
 
-    npm install rpi-ws281x-native
+    npm install @ircam/rpi-ws281x-native
 
 if you prefer installing from source:
 
     npm install -g node-gyp
-    git clone --recursive https://github.com/beyondscreen/node-rpi-ws281x-native.git
+    git clone --recursive https://github.com/ircam-ismm/node-rpi-ws281x-native.git
     cd rpi-ws281x-native
     npm install
 
@@ -39,7 +43,7 @@ It will initialize the driver for 100 LEDs and set all LEDs to the
 same, pinkish color:
 
 ```javascript
-const ws281x = require('rpi-ws281x-native');
+const ws281x = require('@ircam/rpi-ws281x-native');
 
 const channel = ws281x(100, { stripType: 'ws2812' });
 
@@ -62,7 +66,7 @@ way for initialization using the top-level export function.
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('@ircam/rpi-ws281x-native');
 const options = {
   dma: 10,
   freq: 800000,
@@ -95,7 +99,7 @@ Configures and initializes the drivers and returns an array of channel-interface
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('@ircam/rpi-ws281x-native');
 
 const channels = ws281x.init({
   dma: 10,
@@ -130,7 +134,7 @@ Send the current state of the channel color-buffers to the LEDs.
 #### Example:
 
 ```javascript
-const ws2821x = require('rpi-ws281x-native');
+const ws2821x = require('@ircam/rpi-ws281x-native');
 
 // initialize
 const [channel] = ws281x.init(options);
@@ -247,8 +251,8 @@ much for the LEDs for example.
 
 ### Raspberry integrated soundcard
 
-There is a conflict where the internal soundcard uses the same 
-GPIO / DMA / PWM functions that are needed to run the LED-drivers. 
+There is a conflict where the internal soundcard uses the same
+GPIO / DMA / PWM functions that are needed to run the LED-drivers.
 As far as I know you can not use both at the same time.
 
 To disable audio, comment out the following line in config.txt contained on the boot partion.
